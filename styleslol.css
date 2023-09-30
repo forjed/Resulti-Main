@@ -1,0 +1,45 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+body {
+background-color: rgb(27, 34, 44);;
+text-align:;
+}
+
+h1 {
+background-color: ;
+font-family: Lato, sans-serif;
+}
+
+h2 {
+background-color:;
+font-family: Lato, sans-serif;
+ }
+
+h3{
+font-family: Lato, sans-serif;
+}
+
+h4{
+font-family: Lato, sans-serif;
+}
+
+h5{
+font-family: Lato, sans-serif;
+}
+
+a{
+font-family: Lato, sans-serif;
+}
+
+p{
+font-family: Lato, sans-serif;
+}
+a:hover, a:active {
+  background-color: red;
+}
+
+h1 {
+  border-bottom:5px solid #0079FF;
+}

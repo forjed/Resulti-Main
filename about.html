@@ -1,0 +1,112 @@
+<title>About|Resulti</title>
+<head>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@1,600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styleslol.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link
+    rel="shortcut icon"
+    type="image/jpg"
+    href="assets/icon.png"
+  />
+  <meta
+    property="og:image"
+    content="assets/logo.png"
+  />
+  <meta property="og:title" content="About|Resulti" />
+  <meta property="og:description" content="About Resulti the secure search engine" />
+  <meta property="og:image:width" content="1000" />
+  <meta property="og:image:height" content="730" />
+  <meta name="theme-color" content="#03b1d8" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+    crossorigin="anonymous"
+  />
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"
+  ></script>
+  <link rel="stylesheet" href="donate.css" />
+</head>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    	   <a class="navbar-brand" href="index.html">
+      <img src="assets/icon.png" alt="Go!" width="50" height="50">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Products
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="addsearchtoyourwebsite.html">Resulti Search Simple Box</a></li>
+            <li><a class="dropdown-item" href="download.html">Application</a></li>
+            <li><a class="dropdown-item" href="game.html">Resulti Game</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Other
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="donate.html">Donate</a></li>
+            <li><a class="dropdown-item" href="privacypolicy.html">Privacy Policy</a></li>
+            <li><a class="dropdown-item" href="about.html">About</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<body>
+  <div class="container">
+    <div class="center">
+      <img
+        src="assets/logo.png"
+        width="20%"
+      />
+    </div>
+    <h1 class="weebo-title">ABOUT Resulti™...</h1>
+    <h3 class="weebo-title">What is Resulti™ ?</h3> 
+    <p class="description-text">
+It is a search engine. It was created in December 30, 2022.
+    </p>
+     <h3 class="weebo-title">Is it safe?</h3> 
+    <p class="description-text">
+Of course! The search engine does not offer malicious, inappropriate and other sites. We want it to be safe, appropriate and suitable for all types of people and all ages.
+    </p>
+     <h3 class="weebo-title">Is the search engine based on an API and/or on another search engine?</h3> 
+    <p class="description-text">
+Yes! We use an API from Google! That is to say that the results are provided by Google, but modified by us!
+We are not the only search engine that uses a google API! We have StartPage, Clickette and more than you might think.
+    </p>
+ 
+    <p class="description-text">
+Enjoy Resulti !!!
+    </p>
+ <p class="description-text">
+   For more questions or comments about this, contact Forjed Group at contact@resulti.net, mention @resultisearch on your tweet or DM on Twitter.
+  </p>
+<script>
+const queryString = window.location.search;
+$(window).scroll(function (e) {
+  var $el = $('.fixedElement');
+  var isPositionFixed = ($el.css('position') == 'fixed');
+  if ($(this).scrollTop() > 200 && !isPositionFixed) {
+    $el.css({ 'position': 'fixed', 'top': '0px' });
+  }
+  if ($(this).scrollTop() < 200 && isPositionFixed) {
+    $el.css({ 'position': 'static', 'top': '0px' });
+  }
+});
+	</script>
+</body

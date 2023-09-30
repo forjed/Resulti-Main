@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styleslol.css">
+    <link rel="shortcut icon" type="image/jpg" href="assets/icon.png"/>
+    <link rel="stylesheet" href="style.css">
+  </head>
+	
+
+
+<center>
+ <img class="left" 
+src="assets/logo.png" width="300" height="300"
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <ion-icon name="sad-outline"></ion-icon>
+<h2 style="font-family:'Inter Tight',sans-serif; color:white;">Umm...Oh!</h2>
+<p style="font-family:'Inter Tight',sans-serif; color:white;">We are very sorry but:</p>
+<h1>404 ERROR</h1>
+
+Redirect to the Main Page in:
+  <div id="timer"></div>
+
+  <script>
+    var count = 10;
+    var redirect = "http://resulti.net";
+
+    function countDown(){
+        var timer = document.getElementById("timer");
+        if(count < 0){
+            window.location.href = redirect;
+            return;
+        }
+        timer.innerHTML = count;
+        count--;
+    }
+
+    setInterval(countDown, 1000);
+</script>
+<style>
+  #timer {
+    font-size: 2em;
+}
+</style>
+</html>
