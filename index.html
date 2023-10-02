@@ -177,12 +177,56 @@ input[type="submit"] {
       // Ajouter plus de commandes !bang au besoin
       switch (bangCommand) {
         case '!g':
-          // Rediriger la recherche vers Google
+          // google
           window.location.href = `https://www.google.com/search?q=${encodeURIComponent(query.substring(3))}`;
           break;
         case '!d':
-          // Rediriger la recherche vers DuckDuckGo
+          // duck
           window.location.href = `https://duckduckgo.com/?q=${encodeURIComponent(query.substring(3))}`;
+          break;
+	case '!m':
+          // mojeek
+          window.location.href = `https://mojeek.com/?q=${encodeURIComponent(query.substring(3))}`;
+          break;
+	case '!mfr':
+          // mojeek fr
+          window.location.href = `https://mojeek.fr/?q=${encodeURIComponent(query.substring(3))}`;
+          break;
+	case '!y':
+          // yandex
+          window.location.href = `https://yandex.com/?q=${encodeURIComponent(query.substring(3))}`;
+          break;
+	case '!pre':
+          // presearch
+          window.location.href = `https://presearch.com/?q=${encodeURIComponent(query.substring(3))}`;
+          break;
+	case '!gb':
+          // gibiru
+          window.location.href = `https://gibiru.com/?q=${encodeURIComponent(query.substring(3))}`;
+          break;
+	case '!bs':
+          // brave search
+          window.location.href = `https://search.brave.com/?q=${encodeURIComponent(query.substring(3))}`;
+          break;
+	case '!sw':
+          // swisscow
+          window.location.href = `https://swisscows.com/?q=${encodeURIComponent(query.substring(3))}`;
+          break;
+	case '!hoo':
+          // yahoo!
+          window.location.href = `https://yahoo.com/?q=${encodeURIComponent(query.substring(3))}`;
+          break;
+	case '!st':
+          // startpage
+          window.location.href = `https://startpage.com/?q=${encodeURIComponent(query.substring(3))}`;
+          break;
+	case '!you':
+          // youuuuuu!
+          window.location.href = `https://you.com/?q=${encodeURIComponent(query.substring(3))}`;
+          break;
+	case '!click':
+          // clickette
+          window.location.href = `https://clickette.resulti.net/?q=${encodeURIComponent(query.substring(3))}`;
           break;
         // Ajouter d'autres commandes !bang au besoin
         default:
