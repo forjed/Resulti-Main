@@ -1,3 +1,12 @@
+How it work:
+
+Example, If you want to search on duckduckgo: !d hello
+
+And boom! You have the result from duckduckgo!
+
+(caution: every search engine have a different bang!)
+
+
 !g google
 !d duckduckgo
 !m mojeek
