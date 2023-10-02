@@ -163,6 +163,39 @@ input[type="submit"] {
 </form>
 	<p><font color="white"><i class="fa-brands fa-firefox-browser fa-beat" style="color: #ff8040;"></i>The Firefox Extension is back soon!</p>
 </center>
+<script>
+  document.getElementById('standard').addEventListener('submit', function (e) {
+    e.preventDefault(); // Empêche l'envoi du formulaire par défaut
+
+    const input = document.getElementById('search-bar');
+    const query = input.value.trim();
+
+    if (query.startsWith('!')) {
+      // Récupérer la commande !bang (par exemple, "!g" pour Google)
+      const bangCommand = query.split(' ')[0];
+
+      // Ajouter plus de commandes !bang au besoin
+      switch (bangCommand) {
+        case '!g':
+          // Rediriger la recherche vers Google
+          window.location.href = `https://www.google.com/search?q=${encodeURIComponent(query.substring(3))}`;
+          break;
+        case '!d':
+          // Rediriger la recherche vers DuckDuckGo
+          window.location.href = `https://duckduckgo.com/?q=${encodeURIComponent(query.substring(3))}`;
+          break;
+        // Ajouter d'autres commandes !bang au besoin
+        default:
+          // Rediriger vers une recherche par défaut si la commande n'est pas reconnue
+          window.location.href = `/search.html?q=${encodeURIComponent(query)}`;
+          break;
+      }
+    } else {
+      // Rediriger la recherche vers une recherche par défaut si aucune commande !bang n'est utilisée
+      window.location.href = `/search.html?q=${encodeURIComponent(query)}`;
+    }
+  });
+</script>
 <br>
 <br>
 <div id="phrase"></div>
