@@ -1,5 +1,5 @@
 // Forked & modified from https://github.com/clickette/main under CC-BY-SA 4.0
-function checkForBangs(bangQuery) {
+ //function checkForBangs(bangQuery) {
     const bangsMap = [
       ["+g%21", "https://www.google.com/search?q="],
       ["+g!", "https://www.google.com/search?q="],
@@ -89,8 +89,8 @@ function checkForBangs(bangQuery) {
       ["+%21youtube", "https://www.youtube.com/results?search_query="],
       ["+!youtube", "https://www.youtube.com/results?search_query="],
     ];
-    for (let ix = 0; ix < bangsMap.length; ix++) {
-      const bang = bangsMap[ix][0];
+  //  for (let ix = 0; ix < bangsMap.length; ix++) {
+  //    const bang = bangsMap[ix][0];
       const searchUrl = bangsMap[ix][1];
       if (bangQuery.includes(bang)) {
         let queryStr = bangQuery.replace(bang, "");
@@ -99,6 +99,6 @@ function checkForBangs(bangQuery) {
       }
     }
     console.warn('No bang query defined');
-    return false;
+  //  return false;
   }
 
