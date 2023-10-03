@@ -236,6 +236,10 @@ input[type="submit"] {
           // lukol
           window.location.href = `https://lukol.com/search?q=${encodeURIComponent(query.substring(3))}`;
           break;
+	case '!tse':
+          // the search engine
+          window.location.href = `https://thesearchengine.github.io/#gsc.tab=0&gsc.q=${encodeURIComponent(query.substring(3))}`;
+          break;
         // Ajouter d'autres commandes !bang au besoin
         default:
           // Rediriger vers une recherche par défaut si la commande n'est pas reconnue
