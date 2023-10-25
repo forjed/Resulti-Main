@@ -208,7 +208,6 @@ function calculateResult() {
 }
 </script>
 </div>
-
 <script>
 document.getElementById('standard').addEventListener('submit', function(event) {
   event.preventDefault(); // Empêcher la soumission du formulaire
@@ -220,6 +219,7 @@ document.getElementById('standard').addEventListener('submit', function(event) {
   if (searchInput.includes('calcul') || searchInput.includes('calculate') || searchInput.includes('calculator')) {
     // Afficher la calculatrice
     document.getElementById('calculator').style.display = 'block';
+    return false; // Éviter la soumission du formulaire
   }
 });
 </script>
