@@ -209,17 +209,16 @@ function calculateResult() {
 </script>
 </div>
 <script>
-document.getElementById('standard').addEventListener('submit', function(event) {
-  event.preventDefault(); // Empêcher la soumission du formulaire
+const searchInput = document.getElementById('search-bar');
+const calculator = document.getElementById('calculator');
 
-  // Récupérer le contenu de la barre de recherche
-  var searchInput = document.getElementById('search-bar').value.toLowerCase();
+searchInput.addEventListener('input', function() {
+  const searchValue = searchInput.value.toLowerCase();
 
-  // Vérifier si le texte contient l'un des mots clés
-  if (searchInput.includes('calcul') || searchInput.includes('calculate') || searchInput.includes('calculator')) {
-    // Afficher la calculatrice
-    document.getElementById('calculator').style.display = 'block';
-    return false; // Éviter la soumission du formulaire
+  if (searchValue.includes('calcul') || searchValue.includes('calculate') || searchValue.includes('calculator')) {
+    calculator.style.display = 'block';
+  } else {
+    calculator.style.display = 'none';
   }
 });
 </script>
