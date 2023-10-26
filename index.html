@@ -161,6 +161,31 @@ input[type="submit"] {
     <button class="btn btn-info" type="submit" id="button-addon2"><ion-icon name="search-circle"></ion-icon></button>
   </div>
 </form>
+<div id="results" style="display: none;">
+    <div class="result-box">
+      <img src="youtube-logo.png" alt="YouTube Logo">
+      <h2>YouTube</h2>
+      <p>YouTube is a video-sharing platform where users can upload, share, and view videos.</p>
+      <a href="https://www.youtube.com">Visit YouTube</a>
+    </div>
+
+    <div class="result-box">
+      <img src="wikipedia-logo.png" alt="Wikipedia Logo">
+      <h2>Wikipedia</h2>
+      <p>Wikipedia is a free online encyclopedia with articles written by volunteers from around the world.</p>
+      <a href="https://www.wikipedia.org">Visit Wikipedia</a>
+    </div>
+
+    <div class="result-box">
+      <img src="wik-logo.png" alt="Discord Logo">
+      <h2>Discord</h2>
+      <p>Chat</p>
+      <a href="https://discord.com">Visit Discord</a>
+    </div>
+
+    <!-- Ajoutez des résultats similaires pour Dailymotion, Discord, Instagram, Facebook, Microsoft, Canonical, etc. -->
+
+  </div>
 <div id="calculator" style="display: none;">
  <input type="text" id="display" readonly>
   <div>
@@ -208,6 +233,87 @@ function calculateResult() {
   }
 }
 </script>
+
+
+  <script>
+  const searchInput = document.getElementById('search-bar');
+  const calculator = document.getElementById('calculator');
+  const results = document.getElementById('results');
+
+  searchInput.addEventListener('input', function() {
+    const searchValue = searchInput.value.toLowerCase();
+
+    if (searchValue.includes('calcul') || searchValue.includes('calculate') || searchValue.includes('calculator')) {
+      calculator.style.display = 'block';
+      results.style.display = 'none';
+    } else if (searchValue.includes('youtube')) {
+      displayResultFor('YouTube');
+    } else if (searchValue.includes('wikipedia')) {
+      displayResultFor('Wikipedia');
+    } else if (searchValue.includes('discord')) {
+      displayResultFor('Discord');
+    
+    } else {
+      calculator.style.display = 'none';
+      results.style.display = 'none';
+    }
+  });
+
+  function displayResultFor(resultName) {
+    const resultBoxes = document.querySelectorAll('.result-box');
+
+    resultBoxes.forEach(resultBox => {
+      if (resultBox.querySelector('h2').textContent.toLowerCase() === resultName.toLowerCase()) {
+        calculator.style.display = 'none';
+        results.style.display = 'block';
+        resultBox.style.display = 'block';
+      } else {
+        resultBox.style.display = 'none';
+      }
+    });
+  }
+  </script>
+    <style>
+    .result-box {
+      border-radius: 10px;
+      background-color: #f2f2f2;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      margin: 10px;
+      padding: 20px;
+      text-align: center;
+      max-width: 300px;
+      display: none;
+    }
+
+    .result-box img {
+      max-width: 100px;
+    }
+
+    .result-box h2 {
+      font-size: 1.5em;
+      margin: 10px 0;
+    }
+
+    .result-box p {
+      font-size: 1.2em;
+      margin: 10px 0;
+    }
+
+    .result-box a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 10px;
+      transition: background-color 0.3s;
+    }
+
+    .result-box a:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </div>
 <script>
 const searchInput = document.getElementById('search-bar');
