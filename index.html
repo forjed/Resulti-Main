@@ -163,24 +163,59 @@ input[type="submit"] {
 </form>
 <div id="results" style="display: none;">
     <div class="result-box">
-      <img src="youtube-logo.png" alt="YouTube Logo">
+      <img src="/assets/youtube-logo.webp" alt="YouTube Logo" height="50px" width="50px">
       <h2>YouTube</h2>
       <p>YouTube is a video-sharing platform where users can upload, share, and view videos.</p>
       <a href="https://www.youtube.com">Visit YouTube</a>
     </div>
 
     <div class="result-box">
-      <img src="wikipedia-logo.png" alt="Wikipedia Logo">
+      <img src="/assets/Wikipedia-logo-transparent.png" alt="Wikipedia Logo" height="50px" width="50px">
       <h2>Wikipedia</h2>
       <p>Wikipedia is a free online encyclopedia with articles written by volunteers from around the world.</p>
       <a href="https://www.wikipedia.org">Visit Wikipedia</a>
     </div>
 
     <div class="result-box">
-      <img src="wik-logo.png" alt="Discord Logo">
+      <img src="/assets/discordlogo.webp" alt="Discord Logo" height="50px" width="50px">
       <h2>Discord</h2>
-      <p>Chat</p>
+      <p> A place that makes it easy to talk every day and hang out more often.</p>
       <a href="https://discord.com">Visit Discord</a>
+    </div>
+
+	<div class="result-box">
+      <img src="/assets/canonical.png" alt="canonical Logo" height="50px" width="50px">
+      <h2>Canonical</h2>
+      <p> The Canonical way to open source in the enterprise starts with Ubuntu and reaches every part of the stack. </p>
+      <a href="https://canonical.com">Visit Canonical</a>
+    </div>
+
+<div class="result-box">
+      <img src="/assets/dailymontion.png" alt="canonical Logo" height="50px" width="50px">
+      <h2>Dailymotion</h2>
+      <p> The Canonical way to open source in the enterprise starts with Ubuntu and reaches every part of the stack. </p>
+      <a href="https://dailymotion.com">Visit Canonical</a>
+    </div>
+
+	<div class="result-box">
+      <img src="/assets/x.png" alt="canonical Logo" height="50px" width="50px">
+      <h2>X</h2>
+      <p>From the latest news and entertainment to sports and politics, get all the live commentary so you don't miss a thing.
+</p>
+      <a href="https://x.com">Visit X</a>
+    </div>
+	<div class="result-box">
+      <img src="/assets/instagram.png" alt="canonical Logo" height="50px" width="50px">
+      <h2>Instagram</h2>
+      <p> A simple, fun & creative way to capture, edit & share photos, videos & messages with friends & family.</p>
+      <a href="https://instagram.com">Visit Instagram</a>
+    </div>
+
+<div class="result-box">
+      <img src="/assets/microsoft.webp" alt="canonical Logo" height="50px" width="50px">
+      <h2>Microsoft/h2>
+      <p>Explore Microsoft products for private or professional use. Shop Surface, Microsoft 365, Office, Xbox, Windows, Azure and more.</p>
+      <a href="https://microsoft.com">Visit Microsoft</a>
     </div>
 
     <!-- Ajoutez des résultats similaires pour Dailymotion, Discord, Instagram, Facebook, Microsoft, Canonical, etc. -->
@@ -252,7 +287,15 @@ function calculateResult() {
       displayResultFor('Wikipedia');
     } else if (searchValue.includes('discord')) {
       displayResultFor('Discord');
-    
+    }else if (searchValue.includes('instagram')) {
+      displayResultFor('Instagram');
+    }else if (searchValue.includes('microsoft')) {
+     displayResultFor('Microsoft');
+    } else if (searchValue.includes('canonical')) {
+      displayResultFor('Canonical');
+    }else if (searchValue.includes('x' , 'twitter')) {
+      displayResultFor('X');
+
     } else {
       calculator.style.display = 'none';
       results.style.display = 'none';
