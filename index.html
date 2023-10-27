@@ -160,6 +160,11 @@ input[type="submit"] {
     <input type="text" class="form-control" name="q" maxlength="150" id="search-bar" placeholder="Search the web with Resulti...">
     <button class="btn btn-info" type="submit" id="button-addon2"><ion-icon name="search-circle"></ion-icon></button>
   </div>
+ <div id="message" style="display:none;">
+    <h1> Tired to get tracked ? We gotchu! </h1>
+<i class="fa-solid fa-shield"></i> <i class="fa-solid fa-eye-slash"></i> <i class="fa-solid fa-user-ninja"></i>
+<button type="button" class="btn btn-link">Secure</button><button type="button" class="btn btn-link">No Tracking</button><button type="button" class="btn btn-link">No suspect website</button>
+    </div>
 </form>
 <div id="results" style="display: none;">
     <div class="result-box">
@@ -322,6 +327,41 @@ function calculateResult() {
     });
   }
   </script>
+   <script>
+        // Vérifie si un cookie "visited" existe
+        var visited = getCookie("visited");
+
+        // Si le cookie n'existe pas, affiche le message
+        if (!visited) {
+            document.getElementById("message").style.display = "block";
+
+            // Définit un cookie "visited" pour indiquer que l'utilisateur a visité le site
+            setCookie("visited", "true", 365); // Le cookie expire après 365 jours
+        }
+
+        // Fonction pour définir un cookie
+        function setCookie(name, value, days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + value + expires + "; path=/";
+        }
+
+        // Fonction pour obtenir la valeur d'un cookie
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+    </script>
     <style>
     .result-box {
       border-radius: 10px;
