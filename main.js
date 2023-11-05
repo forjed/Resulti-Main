@@ -18,7 +18,7 @@ function enableMobileLayout() {
     $.ajax({
         method: 'GET',
         url: 'https://api.api-ninjas.com/v1/facts?limit=' + limit,
-        headers: { 'X-Api-Key': '1HHHukaNEC5Kh3iDOLeZjQ==nxxKAnwy9XbK9bYM'},
+        headers: { 'X-Api-Key': 'b9aR57fhJG9F2JaFrUCw1w==1LrzSYR3wXxnwrpt'},
         contentType: 'application/json',
         success: function(result) {
         printParsedFact(JSON.stringify(result));
