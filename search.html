@@ -78,12 +78,18 @@ alt="https://resulti.net/" title="Goooooooooooooooooo!" style="float:left;margin
 <br>
 <br>
 
-<form id="standard" method="get" action="/search.html">
-  <div class="input-group">
-    <input type="text" class="form-control" name="q" maxlength="150" id="search-bar" placeholder="Search the web with Resulti...">
-    <button class="btn btn-info" type="submit" id="button-addon2">Go!</button>
-  </div>
+<div class="main">
+<form action="search" class="da-form" id="searcharea">
+<div class="d-flex justify-content-center h-100">
+        <div class="search">
+            <input type="text" class="search-input" name="q" placeholder="search..." name="">
+            <a href="#" class="search-icon">
+                <i class="fa fa-search"></i>
+            </a>
+        </div>
+    </div>
 </form>
+</div>
 
 <hr style="color:white">
 
@@ -102,6 +108,61 @@ alt="https://resulti.net/" title="Goooooooooooooooooo!" style="float:left;margin
 input[type="submit"] {
   width: 18%;
 }
+
+.search{
+    margin-bottom: auto;
+    margin-top: 0px;
+    height: 70px;
+    background-color: #fff;
+    padding: 10px;
+    margin: -60  auto;
+}
+
+.search-input{
+
+    color: white;
+    border:0;
+    outline: 0;
+    background: none;
+    width: 0;
+    margin-top:5px;
+    caret-color:transparent;
+    line-height: 40px;
+    transition: width 0.4s linear;
+
+}
+
+.search .search-input{
+    padding: 0 10px;
+    width: 550px;
+    caret-color: #536bf6;
+    font-size: 21px;
+    font-weight: 300;
+    color: black;
+    transition: width 0.4s linear;
+}
+
+.search:hover>.search-icon{
+    background:#1A237E;
+    color:#fff;
+}
+.search-icon{
+
+        height: 50px;
+    width: 50px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #536bf6;
+
+}
+a:link{
+    text-decoration: none;
+}
+
+</style>
 </style>
 
 
