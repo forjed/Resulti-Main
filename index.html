@@ -152,12 +152,16 @@ input[type="submit"] {
 
 </style>
 <center>
-<form id="standard" method="get" action="/search.html">
-  <div class="input-group">
-    <input type="text" class="form-control" name="q" maxlength="150" id="search-bar" placeholder="Search the web with Resulti...">
-    <button class="btn btn-info" type="submit" id="button-addon2"><ion-icon name="search-circle"></ion-icon></button>
-  </div>
-</form>
+<form action="search.html">
+          <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
+            <div class="input-group">
+              <input type="search" placeholder="What're you searching for?" aria-describedby="button-addon1" class="form-control border-0 bg-light" id="search-bar">
+              <div class="input-group-append">
+                <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+              </div>
+            </div>
+          </div>
+	 </form>
 <br>
  <div id="message" style="display:none;">
     <h1 style="color:white;"> Tired to get tracked ? We gotchu! </h1>
