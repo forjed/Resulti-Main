@@ -110,15 +110,29 @@
 
 </style>
 
+
   
 
 
-<center>
 <a href="">
     <img class="left" id="my-img"
 src="assets/logo.png" width="185" height="185" 
 alt="" title="Thanks you for using Resulti!" style="float:center-top;margin:0 10px 10px;" />
 </a>
+
+
+
+<be>
+ <center>
+ <img class="center" src="assets/forjedlogo.png" width="45" height="45" style="float:center-top;margin:0 10px 10px;"
+</center>
+<center>
+<a href="https://service.resulti.net">Click here to switch service.</a>
+</center>
+<center>
+  <div>
+    <span id="texte"></span>
+  </div>
 </center>
 <style>
 #standard {
@@ -147,6 +161,8 @@ input[type="submit"] {
 <br>
  <div id="message" style="display:none;">
     <h1 style="color:white;"> Tired to get tracked ? We gotchu! </h1>
+<i class="fa-solid fa-shield" style="color:white;"></i> <i class="fa-solid fa-eye-slash" style="color:white;"></i> <i class="fa-solid fa-user-ninja" style="color:white;"></i>
+<button type="button" class="btn btn-link">Secure</button><button type="button" class="btn btn-link">No Tracking</button><button type="button" class="btn btn-link">No suspect website</button>
  <a href="https://addons.mozilla.org/en-US/firefox/addon/resulti-by-forjed/"><img src="assets/get-the-addon-small.png">
  </div>
 
@@ -264,10 +280,7 @@ function calculateResult() {
 }
 </script>
 
-<center>
- <img class="center" src="forjedlogo.png" width="105" height="105" style="float:center-top;margin:0 10px 10px;">
-   <a href="https://service.resulti.net">Click here to switch service.</a>
-</center>
+
   <script>
   const searchInput = document.getElementById('search-bar');
   const calculator = document.getElementById('calculator');
@@ -484,7 +497,7 @@ searchInput.addEventListener('input', function() {
           break;
 	case '!tse':
           // the search engine
-          window.location.href = `https://thesearchengine.github.io/search?q=${encodeURIComponent(query.substring(3))}`;
+          window.location.href = `https://thesearchengine.github.io/#gsc.tab=0&gsc.q=${encodeURIComponent(query.substring(3))}`;
           break;
         // Ajouter d'autres commandes !bang au besoin
         default:
@@ -662,7 +675,7 @@ document.location.replace('/bad-time')
 </style>
  <!-- Button trigger modal -->
 <button type="button" class="btn btn-info btn-sm" id="theme" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  <ion-icon name="brush"></ion-icon>
+  Customize Homepage
 </button>
 <a class="btn btn-dark" href="https://proxyproxybeta.vercel.app/" role="button">Proxy Mode (ProxyProxy by Resulti)</a>
 
