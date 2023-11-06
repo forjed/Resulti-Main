@@ -31,7 +31,7 @@ html>
         <div class="bg-white p-5 rounded shadow">
         <img src="assets/resultisearch.svg" width="100" height="100">
 
-          <form action="/search.html">
+          <form id="standard2" action="/search.html">
             <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
               <div class="input-group">
                 <input type="search" name="q" placeholder="What're you searching for?" aria-describedby="button-addon1" class="form-control border-0 bg-light">
@@ -341,7 +341,7 @@ html>
       $(".search-txt-input").keydown(function (e) {
       if (e.keyCode == 13 && !e.shiftKey) {
       e.preventDefault();
-      document.getElementById("standard").submit();
+      document.getElementById("standard2").submit();
       return false;
       }
       });
