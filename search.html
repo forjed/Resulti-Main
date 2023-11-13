@@ -105,147 +105,119 @@ input[type="submit"] {
 </style>
 
 
+    <div id="results">
+    </div>
 
+    <script>
+        const form = document.getElementById('search-form');
+        const queryInput = document.getElementById('query');
+        const resultsDiv = document.getElementById('results');
 
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const query = queryInput.value.trim();
+            
+            // Replace '<YOUR_API_KEY>' with your actual API key
+            const apiKey = 'BSAjuW2WxpQQrshTG2MdZ_SMOGAPKfx';
+            
+            // Make a request to the Brave Search API
+            const badApiUrl = `https://api.search.brave.com/res/v1/web/search?q=${encodeURIComponent(query)}`;
+            // const originalUrl = 'https://api.search.brave.com/res/v1/web/search?q=cool%20rocks';
+            const apiUrl = 'https://corsproxy.io/?' + encodeURIComponent(badApiUrl);
+            const headers = {
+                'Accept': 'application/json',
+                'Accept-Encoding': 'gzip',
+                'X-Subscription-Token': apiKey
+            };
 
-    </h1>
+            try {
+                const response = await fetch(apiUrl, { headers });
+                const data = await response.json();
+                displayResults(data);
+                boldText(query)
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                resultsDiv.innerHTML = '<p>An error occurred while fetching results.</p>';
+            }
+        });
 
-  </center>
+        function displayResults(data) {
+    // Clear previous results
+    resultsDiv.innerHTML = '';
+
+    if (data.web && data.web.results && data.web.results.length > 0) {
+        data.web.results.forEach((result) => {
+            const resultDiv = document.createElement('div');
+            resultDiv.classList.add('result-item');
+            resultDiv.innerHTML = `
+                <code style="color: #eee; font-size: 16px;"><img src="${result.meta_url.favicon}" width="16" style="margin-right: 5px; margin-bottom: -2px;">${result.meta_url.scheme}://${result.meta_url.hostname} ${result.meta_url.path}</code>
+                <p style="margin-bottom: 0; margin-top: 4px;"><a href="${result.url}" target="_blank" style="color: #8ab4f8;">${result.title}</a></p>
+                <p style="margin-top: 5px; color: #ccc;">${result.description}</p>
+            `;
+            resultsDiv.appendChild(resultDiv);
+        });
+    } else {
+        resultsDiv.innerHTML = '<p>No results found.</p>';
+    }
+}
+
+function boldText(queryString) {
+// Get all <a> elements within the <div id="results">
+let links = document.querySelectorAll("#results .result-item p a");
+
+// Function to escape special characters in a string for RegExp
+function escapeRegExp(string) {
+  return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+// Loop through each <a> element
+links.forEach(function(link) {
+  // Get the text content of the link
+  let linkText = link.textContent;
+
+  // Loop through each word in the query
+  queryString.split(" ").forEach(function(keyword) {
+    // Create a regular expression to match the whole word, case-insensitive
+    let regex = new RegExp("\\b" + escapeRegExp(keyword) + "\\b", "gi");
+
+    // Replace all occurrences of the matched keyword with the <strong> element
+    linkText = linkText.replace(regex, function(match) {
+      return "<strong>" + match + "</strong>";
+    });
+  });
+
+  // Update the link's HTML with the bolded text
+  link.innerHTML = linkText;
+});
+}
+      function getUrlParameter(sParam) {
+          var sPageURL = window.location.search.substring(1);
+          var sURLVariables = sPageURL.split('&');
+          for (var i = 0; i < sURLVariables.length; i++)
+          {
+          var sParameterName = sURLVariables[i].split('=');
+          if (sParameterName[0] == sParam)
+          {
+          return sParameterName[1];
+      }}}
+
+      // console.log(getUrlParameter('q')) // This will print the search query
+      if (getUrlParameter('q') !== undefined && getUrlParameter('q') !== '') {
+      document.title = 'Brave Search - ' + getUrlParameter('q')
+      document.getElementById('query').value = getUrlParameter('q')
+      document.getElementById('submit').click()
+      } else {
+        document.location.replace('https://resulti.net')
+      }
+
+      document.getElementById('submit').addEventListener('click', function() {
+        window.history.pushState("", "Resulti", `/?q=${document.getElementById('query').value}`);
+        // console.log('WOOOPS....something happened')
+      })
+        </script> <!-- now all that needs to be done is styling the site to be resulti -->
 
 <style>
 @import url('https://fonts.cdnfonts.com/css/lato?styles=17382');
- .gsc-result-info {
-  color: blue !important;
-}
-  .gsc-control-cse {
-  font-family: Lato,sans-serif ;
-}
-    .gsc-control-cse {
-  font-family: Lato, sans-serif;
-}
-    .gsc-control-cse, .gsc-control-cse .gsc-table-result {
-  font-family: Lato, sans-serif;
-  font-size: 15px;
-}
-   .gs-spelling {
-  color: #fff;
-  padding-left: 7px;
-  padding-right: 7px;
-}
-
-     .gsc-webResult .gsc-result {
-  border-bottom: 1px solid #333;
-    border-bottom-color: rgb(51, 51, 51);
-    border-bottom-style: solid;
-    border-bottom-width: 6px;
-  word-break: break-word;
-}
-  .gsc-selected-option-container {
-  background-color: #7baaf7;
-  background-image: linear-gradient(top, whiteSmoke, #f1f1f1);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 2px;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-  color: #fff;
-  cursor: default;
-  font-size: 11px;
-  font-weight: bold;
-  height: 27px;
-  line-height: 27px;
-  max-width: 90%;
-  min-width: 54px;
-  outline: 0;
-  padding: 0 28px 0 6px;
-  position: relative;
-  text-align: center;
-}  
-	  
- 
-	  
-   :not(hr, .gsc-tabHeader) {
-  border: 0px !important;
-    border-top-color: currentcolor;
-    border-top-style: none;
-    border-top-width: 0px;
-    border-right-color: currentcolor;
-    border-right-style: none;
-    border-right-width: 0px;
-    border-bottom-color: currentcolor;
-    border-bottom-style: none;
-    border-bottom-width: 0px;
-    border-left-color: currentcolor;
-    border-left-style: none;
-    border-left-width: 0px;
-    border-image-outset: 0;
-    border-image-repeat: stretch;
-    border-image-slice: 100%;
-    border-image-source: none;
-    border-image-width: 1;
-	   
-	   
-
-
-.gcsc-find-more-on-google-branding {
-      display: none!important;
-    }
-.gsc-adBlock {
-  display: none;
-}
-	   
-.gcsc-find-more-on-google {
-  color: #3366ff;
-  display: none;
-}
-.gsc-results .gsc-cursor {
-  color: #8c8c8c;
-  fill: #8c8c8c;
-}
-
-.gsc-results .gsc-cursor {
-  display: -webkit-flex;
-  display: flex;
-  align-items: center;
-}	   
-.gs-result .gs-image, .gs-result .gs-promotion-image{
-border-radius: 10px; 
-}   	   
-.gs-imageResult-popup .gs-image-popup-box{
-	border-radius: 10px; 
-	
-}
-	.gs-previewSnippet{
-		border-radius: 10px; 
-	}
-.gsc-tabHeader.gsc-tabhActive, .gsc-refinementHeader.gsc-refinementhActive {
-	font-size:40px;
-}
-.gsc-control-cse .gs-spelling, .gsc-control-cse .gs-result .gs-title, .gsc-control-cse .gs-result .gs-title * {
-	font-size:20px;
-}
-  </style>
-
- 
-</div>
-
-<script src="https://www.google.com/jsapi"></script>
-<script>google.load('search', '1');</script>
-<script>var customSearchOptions = {}; 
-var customSearchControl = new google.search.CustomSearchControl(
-  'cx=b2eb70a2649874cc6', customSearchOptions);</script>
-
-
-
-<br>
-<p>You can made your search easier with filter! :D : </p>
-<script async src="https://cse.google.com/cse.js?cx=b2eb70a2649874cc6">
-</script>
-<div id="resultsbox" class="paddingbox">
-<div class="gcse-searchresults-only"></div>
-<style>
-.paddingbox {
-  margin-left: 4%;
-  margin-right: 200px;
-}
 </style>
 <div class="d-flex justify-content-center">
   <div class="spinner-border" role="status">
