@@ -1,4 +1,4 @@
-<html>
+html>
 <title>Result|Resulti</title>
   <head>
   <meta name="theme-color" content="#0033cc">
@@ -92,12 +92,13 @@ alt="https://resulti.net/" title="Goooooooooooooooooo!" style="float:left;margin
 <br>
 <br>
 <br>
-<form id="standard" method="get" action="/search.html">
-  <div class="input-group">
-    <input type="text" class="form-control" name="q" maxlength="150" id="search-bar" placeholder="Search the web with Resulti...">
-    <button class="btn btn-info" type="submit" id="button-addon2">Go!</button>
-  </div>
-</form>
+
+ <form id="search-form"  id="standard">
+	 <div class="input-group">
+        <input type="text" id="query" class="form-control" id="search-bar" maxlength="150" placeholder="Enter your search query">
+        <button class="btn btn-info" type="submit" id="submit" id="button-addon2">Search</button>
+	 </div>
+    </form>
 <br>
 <h6>Web</h6> 
 <hr style="color:white">
@@ -355,13 +356,43 @@ t>
 <br>
 <br>
  <center>
- <form id="search-form"  id="standard">
-	 <div class="input-group">
-        <input type="text" id="query" class="form-control" id="search-bar" maxlength="150" placeholder="Enter your search query">
-        <button class="btn btn-info" type="submit" id="submit" id="button-addon2">Search</button>
-	 </div>
-    </form>
+<form id="standard" method="get" action="/search.html">
+  <div class="input-group">
+    <input type="text" class="form-control" name="q" maxlength="150" id="search-bar" placeholder="Search the web with Resulti...">
+    <button class="btn btn-info" type="submit" id="button-addon2">Go!</button>
+  </div>
+</form>
 	</center>
 
+  <script>
+function getUrlParameter(sParam) {
+var sPageURL = window.location.search.substring(1);
+var sURLVariables = sPageURL.split('&');
+for (var i = 0; i < sURLVariables.length; i++) {
+var sParameterName = sURLVariables[i].split('=');
+if (sParameterName[0] == sParam) {
+return sParameterName[1];
+}
+}
+}
+var q = getUrlParameter('q');
+const qf = q.replaceAll('+', '%20');
+const qfc = decodeURIComponent(qf);
+document.getElementById('search-bar').value = qfc;
+window.addEventListener('popstate', function (event) {
+q = getUrlParameter('q');
+qf = q.replaceAll('+', '%20');
+qfc = decodeURIComponent(qf);
+document.getElementById('search-bar').value = qfc;
+});
+document.title = qfc + " - Resulti Search";
 
+$(".search-txt-input").keydown(function (e) {
+if (e.keyCode == 13 && !e.shiftKey) {
+e.preventDefault();
+document.getElementById("standard").submit();
+return false;
+}
+});
+	</script>
 <html>
