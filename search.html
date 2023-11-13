@@ -97,13 +97,38 @@ alt="https://resulti.net/" title="Goooooooooooooooooo!" style="float:left;margin
 	 <div class="input-group">
         <input type="text" id="query" class="form-control" id="search-bar" maxlength="150" placeholder="Enter your search query" required>
         <button class="btn btn-info" type="submit" id="submit" id="button-addon2">Search</button>
+	<button class="btn btn-info" type="button" id="image-search">Image</button>
 	 </div>
     </form>
-
+<br>
+<h6>Web</h6> 
 <hr style="color:white">
  <div id="results">
     </div>
-// Creddit to ClaytonTDM for the API
+
+ <script>
+        // Function to perform image search
+        function performImageSearch() {
+            // Récupérer la valeur de la requête de recherche
+            var query = document.getElementById('query').value;
+
+            // Construire l'URL de recherche d'image avec DuckDuckGo
+            var searchURL = "https://duckduckgo.com/?q=" + encodeURIComponent(query) + "&iax=images&ia=images";
+
+            // Rediriger l'utilisateur vers l'URL de recherche
+            window.location.href = searchURL;
+        }
+
+        // Ajouter un gestionnaire d'événements au bouton "Image"
+        document.getElementById('image-search').addEventListener('click', performImageSearch);
+
+        // Ajouter un gestionnaire d'événements pour le formulaire de recherche
+        document.getElementById('search-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Empêche le formulaire de se soumettre normalement
+            performImageSearch(); // Appeler la fonction pour effectuer la recherche d'image
+        });
+    </script>
+// Credit to ClaytonTDM for the API
     <script>
         const form = document.getElementById('search-form');
         const queryInput = document.getElementById('query');
