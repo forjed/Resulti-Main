@@ -289,16 +289,15 @@ if (window.matchMedia("(min-width: 937px)").matches) {
 }		
 </script>
 <script>
-document.getElementById('search-form').addEventListener('submit', function (event) {
-    var query = document.getElementById('query').value;
-    var encodedQuery = encodeURIComponent(query);
-    // Vous pouvez maintenant utiliser encodedQuery pour construire votre URL de recherche.
-    // Par exemple, si vous utilisez une requête AJAX :
-    // var url = '/votre-endpoint-de-recherche?query=' + encodedQuery;
-    // Ensuite, effectuez votre requête AJAX avec l'URL construit.
-    // ...
-    event.preventDefault(); // Cela évitera à la page de se recharger.
-});
+<script>
+    document.getElementById('search-form').addEventListener('submit', function (event) {
+        var query = document.getElementById('query').value;
+        var encodedQuery = encodeURIComponent(query);
+        this.action = '/search?q=' + encodedQuery;
+        // Vous pouvez également ajouter d'autres paramètres à votre URL ici si nécessaire.
+    });
+</script>
+
 
 </script>
 <style>
