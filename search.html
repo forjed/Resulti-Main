@@ -96,31 +96,12 @@ alt="https://resulti.net/" title="Goooooooooooooooooo!" style="float:left;margin
 <form id="standard" method="get" action="/search.html">
   <div class="input-group">
     <input type="text" class="form-control" id="query" maxlength="150" id="search-bar" placeholder="Search the web with Resulti...">
-    <button class="btn btn-info" type="submit" id="button-addon2">Go!</button>
+    <button class="btn btn-info" id="submit" type="submit" id="button-addon2">Go!</button>
   </div>
 </form>
 
 <hr style="color:white">
-
-<style>
-#standard {
-  display: flex;
-  justify-content: space-between;
-  max-width: 500px;
-  margin: -60  auto;
-}
-
-#animated-2 {
-  width: 80%;
-}
-
-input[type="submit"] {
-  width: 18%;
-}
-</style>
-
-
-    <div id="results">
+ <div id="results">
     </div>
 
     <script>
@@ -222,7 +203,7 @@ links.forEach(function(link) {
       document.getElementById('query').value = getUrlParameter('q')
       document.getElementById('submit').click()
       } else {
-        document.location.replace('https://resulti.net')
+        document.location.replace('')
       }
 
       document.getElementById('submit').addEventListener('click', function() {
@@ -230,6 +211,23 @@ links.forEach(function(link) {
         // console.log('WOOOPS....something happened')
       })
         </script> <!-- now all that needs to be done is styling the site to be resulti -->
+<style>
+#standard {
+  display: flex;
+  justify-content: space-between;
+  max-width: 500px;
+  margin: -60  auto;
+}
+
+#animated-2 {
+  width: 80%;
+}
+
+input[type="submit"] {
+  width: 18%;
+}
+</style>
+
 
 <style>
 @import url('https://fonts.cdnfonts.com/css/lato?styles=17382');
