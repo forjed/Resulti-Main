@@ -120,6 +120,16 @@ alt="https://resulti.net/" title="Goooooooooooooooooo!" style="float:left;margin
 	 <div class="input-group">
         <input type="text" id="query" class="form-control" id="search-bar" maxlength="150" placeholder="Enter your search query">
         <button class="btn btn-info" type="submit" id="submit" id="button-addon2">Search</button>
+	<div class="btn-group">
+  <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    🔽
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#" id="image-search">Image (DDG)</a></li>
+    <li><a class="dropdown-item" href="#" id="news-search">News (Mojeek)</a></li>
+  </ul>
+</div>
+
 	 </div>
     </form>
  <script>
@@ -140,6 +150,24 @@ alt="https://resulti.net/" title="Goooooooooooooooooo!" style="float:left;margin
 
 
     </script>
+ <script>
+        // Function to perform image search
+        function performImageSearch() {
+            // Récupérer la valeur de la requête de recherche
+            var query = document.getElementById('query').value;
+
+            // Construire l'URL de recherche d'image avec DuckDuckGo
+            var searchURL = "https://mojeek.com/search?q=" + encodeURIComponent(query) + "&fmt=news";
+
+            // Rediriger l'utilisateur vers l'URL de recherche
+            window.location.href = searchURL;
+        }
+
+        // Ajouter un gestionnaire d'événements au bouton "news"
+        document.getElementById('news-search').addEventListener('click', performImageSearch);
+
+
+    </script>
 
 <br>
 <br>
@@ -147,12 +175,7 @@ alt="https://resulti.net/" title="Goooooooooooooooooo!" style="float:left;margin
 <hr style="color:white">
 <br>
 <br>
-<div id="buttonsearch">
-<button class="btn btn-info btn-sm" type="button">Web</button>
-<form id="search-form"  id="standard">
-<button class="btn btn-info btn-sm" type="button" id="image-search">Image</button>
-</form>
-</div>
+
 <br>
  <div id="results">
     </div>
