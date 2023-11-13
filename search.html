@@ -92,13 +92,12 @@ alt="https://resulti.net/" title="Goooooooooooooooooo!" style="float:left;margin
 <br>
 <br>
 <br>
-
- <form id="search-form"  id="standard">
-	 <div class="input-group">
-        <input type="text" id="query" class="form-control" id="search-bar" maxlength="150" placeholder="Enter your search query">
-        <button class="btn btn-info" type="submit" id="submit" id="button-addon2">Search</button>
-	 </div>
-    </form>
+<form id="standard" method="get" action="/search.html">
+  <div class="input-group">
+    <input type="text" class="form-control" name="q" maxlength="150" id="search-bar" placeholder="Search the web with Resulti...">
+    <button class="btn btn-info" type="submit" id="button-addon2">Go!</button>
+  </div>
+</form>
 <br>
 <h6>Web</h6> 
 <hr style="color:white">
@@ -356,12 +355,12 @@ t>
 <br>
 <br>
  <center>
-<form id="standard" method="get" action="/search.html">
-  <div class="input-group">
-    <input type="text" class="form-control" name="q" maxlength="150" id="search-bar" placeholder="Search the web with Resulti...">
-    <button class="btn btn-info" type="submit" id="button-addon2">Go!</button>
-  </div>
-</form>
+ <form id="search-form"  id="standard">
+	 <div class="input-group">
+        <input type="text" id="query" class="form-control" id="search-bar" maxlength="150" placeholder="Enter your search query">
+        <button class="btn btn-info" type="submit" id="submit" id="button-addon2">Search</button>
+	 </div>
+    </form>
 	</center>
 
   <script>
