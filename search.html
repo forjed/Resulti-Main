@@ -205,8 +205,13 @@ alt="https://resulti.net/" title="Goooooooooooooooooo!" style="float:left;margin
             try {
                 const response = await fetch(apiUrl/*, { headers }*/);
                 const data = await response.json();
-                displayResults(data);
-                boldText(query)
+ if (data.safesearch === 'strict') {
+        boldText(query);
+        displayResults(data);
+    } else {
+        // Si le niveau de SafeSearch n'est pas strict, ne rien afficher ou prendre d'autres mesures
+        resultsDiv.innerHTML = '<p>Aucun résultat disponible en raison du niveau de SafeSearch.</p>';
+    }
             } catch (error) {
                 console.error('Error fetching data:', error);
                 resultsDiv.innerHTML = '<p>An error occurred while fetching results.</p>';
