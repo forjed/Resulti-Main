@@ -108,6 +108,31 @@ alt="https://resulti.net/" title="Goooooooooooooooooo!" style="float:left;margin
 <br>
 <br>
 <br>
+  <style>
+  .custom-navbar {
+          position: fixed;
+          top: 0;
+          width: 100%;
+          background-color: #f8f9fa; /* Couleur de fond de la barre de navigation */
+          padding: 15px; /* Espace interne pour le contenu de la barre de navigation */
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère */
+          z-index: 1000; /* Assurez-vous que la barre de navigation reste au-dessus du contenu */
+      }
+
+      .custom-navbar a {
+          margin-right: 15px;
+          text-decoration: none;
+          color: #495057; /* Couleur du texte de la barre de navigation */
+          font-weight: bold;
+      }
+
+      .custom-navbar input {
+          margin-right: 15px;
+      }
+
+      /* Ajoutez d'autres styles au besoin */
+  </style>
+<div class="custom-navbar">
 <center>
 <form id="standard" method="get" action="/search.html">
   <div class="input-group">
@@ -125,6 +150,7 @@ alt="https://resulti.net/" title="Goooooooooooooooooo!" style="float:left;margin
   </div>
 </form>
 	</center>
+</div>
  <form id="search-form"  id="standard">
 	 <div class="input-group">
         <input type="text" id="query" class="form-control" id="search-bar" maxlength="150" placeholder="Enter your search query">
