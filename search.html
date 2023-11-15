@@ -97,7 +97,25 @@
 }
 </style>
 
-
+<div class="custom-navbar">
+<center>
+<form id="standard" method="get" action="/search.html">
+  <div class="input-group">
+    <input type="text" class="form-control" name="q" maxlength="150" id="search-bar" placeholder="Search the web with Resulti...">
+    <button class="btn btn-info" type="submit" id="button-addon2">Go!</button>
+	<div class="btn-group">
+  <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    🔽
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#" id="image-search">Image (DDG)</a></li>
+    <li><a class="dropdown-item" href="#" id="news-search">News (Mojeek)</a></li>
+  </ul>
+</div>
+  </div>
+</form>
+	</center>
+</div>
 
 <a href="https://resulti.net/">
   <img class="center" id="my-img"
@@ -122,25 +140,7 @@ alt="https://resulti.net/" title="Goooooooooooooooooo!" style="float:left;margin
 
       /* Ajoutez d'autres styles au besoin */
   </style>
-<div class="custom-navbar">
-<center>
-<form id="standard" method="get" action="/search.html">
-  <div class="input-group">
-    <input type="text" class="form-control" name="q" maxlength="150" id="search-bar" placeholder="Search the web with Resulti...">
-    <button class="btn btn-info" type="submit" id="button-addon2">Go!</button>
-	<div class="btn-group">
-  <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-    🔽
-  </button>
-  <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="#" id="image-search">Image (DDG)</a></li>
-    <li><a class="dropdown-item" href="#" id="news-search">News (Mojeek)</a></li>
-  </ul>
-</div>
-  </div>
-</form>
-	</center>
-</div>
+
  <form id="search-form"  id="standard">
 	 <div class="input-group">
         <input type="text" id="query" class="form-control" id="search-bar" maxlength="150" placeholder="Enter your search query">
