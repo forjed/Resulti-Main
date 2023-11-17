@@ -126,6 +126,7 @@ alt="https://resulti.net/" title="Goooooooooooooooooo!" style="float:left;margin
 </div>
   </div>
 </form>
+<a href="#">Web</a><a href="#" id="imager-search">Image</a>
 </center>
 
  <form id="search-form"  id="standard">
@@ -169,6 +170,24 @@ alt="https://resulti.net/" title="Goooooooooooooooooo!" style="float:left;margin
 
         // Ajouter un gestionnaire d'événements au bouton "news"
         document.getElementById('news-search').addEventListener('click', performImageSearch);
+
+
+    </script>
+<script>
+        // Function to perform image search
+        function performImageSearch() {
+            // Récupérer la valeur de la requête de recherche
+            var query = document.getElementById('query').value;
+
+            // Construire l'URL de recherche d'image avec DuckDuckGo
+            var searchURL = "https://image.resulti.net/search?q=" + encodeURIComponent(query);
+
+            // Rediriger l'utilisateur vers l'URL de recherche
+            window.location.href = searchURL;
+        }
+
+        // Ajouter un gestionnaire d'événements au bouton "news"
+        document.getElementById('imager-search').addEventListener('click', performImageSearch);
 
 
     </script>
