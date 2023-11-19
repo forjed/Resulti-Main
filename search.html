@@ -120,8 +120,10 @@ alt="https://resulti.net/" title="Goooooooooooooooooo!" style="float:left;margin
     🔽
   </button>
   <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="#" id="imager-search">Image(NOW 100% RESULTI :D)</a></li>
-    <li><a class="dropdown-item" href="#" id="news-search">News (Mojeek)</a></li>
+    <li><a class="dropdown-item" href="#" id="web-search">Web</a></li>
+    <li><a class="dropdown-item" href="#" id="image-search">Images</a></li>
+    <li><a class="dropdown-item" href="#" id="video-search">Videos</a></li>
+    <li><a class="dropdown-item" href="#" id="news-search">News</a></li>
   </ul>
 </div>
   </div>
@@ -142,14 +144,14 @@ alt="https://resulti.net/" title="Goooooooooooooooooo!" style="float:left;margin
             var query = document.getElementById('query').value;
 
             // Construire l'URL de recherche d'image avec DuckDuckGo
-            var searchURL = "https://duckduckgo.com/?q=" + encodeURIComponent(query) + "&iax=images&ia=images";
+            var searchURL = "https://video.resulti.net/search?q=" + encodeURIComponent(query);
 
             // Rediriger l'utilisateur vers l'URL de recherche
             window.location.href = searchURL;
         }
 
         // Ajouter un gestionnaire d'événements au bouton "Image"
-        document.getElementById('image-search').addEventListener('click', performImageSearch);
+        document.getElementById('video-search').addEventListener('click', performImageSearch);
 
 
     </script>
@@ -160,7 +162,7 @@ alt="https://resulti.net/" title="Goooooooooooooooooo!" style="float:left;margin
             var query = document.getElementById('query').value;
 
             // Construire l'URL de recherche d'image avec DuckDuckGo
-            var searchURL = "https://mojeek.com/search?q=" + encodeURIComponent(query) + "&fmt=news";
+            var searchURL = "https://news.resulti.net/search?q=" + encodeURIComponent(query);
 
             // Rediriger l'utilisateur vers l'URL de recherche
             window.location.href = searchURL;
@@ -185,7 +187,25 @@ alt="https://resulti.net/" title="Goooooooooooooooooo!" style="float:left;margin
         }
 
         // Ajouter un gestionnaire d'événements au bouton "news"
-        document.getElementById('imager-search').addEventListener('click', performImageSearch);
+        document.getElementById('image-search').addEventListener('click', performImageSearch);
+
+
+    </script>
+    <script>
+        // Function to perform image search
+        function performImageSearch() {
+            // Récupérer la valeur de la requête de recherche
+            var query = document.getElementById('query').value;
+
+            // Construire l'URL de recherche d'image avec DuckDuckGo
+            var searchURL = "https://resulti.net/search?q=" + encodeURIComponent(query);
+
+            // Rediriger l'utilisateur vers l'URL de recherche
+            window.location.href = searchURL;
+        }
+
+        // Ajouter un gestionnaire d'événements au bouton "news"
+        document.getElementById('web-search').addEventListener('click', performImageSearch);
 
 
     </script>
